@@ -21,10 +21,6 @@ stages:
     pool:
       vmImage: vs2017-win2016
     steps:
-    - task: HelmInstaller@1
-      displayName: 'Install Helm '
-      inputs:
-        helmVersionToInstall: v3.1.2
     - task: Kubernetes@1
       displayName: 'kubectl login'
       inputs:
