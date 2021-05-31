@@ -6,13 +6,17 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-  - host: akstomaustin.westeurope.cloudapp.azure.com
+  - host: aksacapmonitordev.eastus2.cloudapp.azure.com
     http:
       paths:
+      - path: /grid(/|$)(.*)
+        backend:
+          serviceName: selenium-router
+          servicePort: 4444
       - path: /
         backend:
           serviceName: helloworld
           servicePort: 80
-
