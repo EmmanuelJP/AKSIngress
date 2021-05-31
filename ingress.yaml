@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-  - host: aksacapmonitordev.eastus2.cloudapp.azure.com
+  - host: acapdevaks.eastus2.cloudapp.azure.com
     http:
       paths:
       - path: /grid(/|$)(.*)
